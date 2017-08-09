@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CribListingComponent } from './crib-listing/crib-listing.component';
+import { CribCardComponent } from './crib-card/crib-card.component';
 
 
 //defines strucutre of app
@@ -12,7 +13,8 @@ import { CribListingComponent } from './crib-listing/crib-listing.component';
   // let app know abou tcompets hat we have created/or added from thirdparty
   declarations: [
     AppComponent,
-    CribListingComponent //this was  auto added usin gthe ng cli
+    CribListingComponent,//ng g component crib-card
+    CribCardComponent //this was  auto added using the ng cli
   ],
   imports: [ //list angular specific modules
     BrowserModule,
