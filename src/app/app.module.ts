@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { CribListingComponent } from './crib-listing/crib-listing.component';
 import { CribCardComponent } from './crib-card/crib-card.component';
 
+import {CribsService} from './services/cribs.service'
+
 
 //defines strucutre of app
 @NgModule({
@@ -22,7 +24,9 @@ import { CribCardComponent } from './crib-card/crib-card.component';
     HttpModule
   ],
   //register injectable services
-  providers: [],
+  providers: [
+    CribsService
+  ],
   bootstrap: [AppComponent] //which componen tis the top level (main) componet of application .Allother componetnes will be child components of this oone
 })
 export class AppModule { }

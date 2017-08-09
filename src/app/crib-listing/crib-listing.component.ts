@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {cribs}  from './../data/cribs'
+import {Component, OnInit} from '@angular/core';
+import {CribsService} from './../services/cribs.service';
 
 @Component({
   selector: 'app-crib-listing',
@@ -8,11 +8,22 @@ import {cribs}  from './../data/cribs'
 })
 export class CribListingComponent implements OnInit { //ability to do something whenever this componet get initialised - lifecycle hook
 
-  cribs: Array<any>=cribs ;
+  cribs: Array<any>;
+  error: string;
 
-  constructor() { }
+
+  //inject http into component -  inject dependency into pass Http to privaate var http to be used in component
+  constructor(private cribsService: CribsService) {
+
+  }
 
   ngOnInit() {
+
+    this.cribsService.getAllCribs()
+      .subscribe(
+        data => this.cribs = data,
+        error => this.error = error.statusText
+      );
   }
 
 }
