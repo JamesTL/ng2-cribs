@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CribsService} from './../services/cribs.service';
+import {UtilService} from './../services/util.service';
 
 @Component({
   selector: 'app-crib-listing',
@@ -10,11 +11,22 @@ export class CribListingComponent implements OnInit { //ability to do something 
 
   cribs: Array<any>;
   error: string;
+  sortFields: Array<string> = [
+    'address',
+    'area',
+    'bathrooms',
+    'bedrooms',
+    'price',
+    'type'
+  ];
+  sortDirection:string = 'asc';
+  sortField:string ='Price';
 
 
-  //inject http into component -  inject dependency into pass Http to privaate var http to be used in component
-  constructor(private cribsService: CribsService) {
 
+  //inject http into component -  inject d=ependency into pass Http to privaate var http to be used in component
+  constructor(private cribsService: CribsService,
+              private utilService: UtilService) {
   }
 
   ngOnInit() {
