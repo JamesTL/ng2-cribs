@@ -7,7 +7,8 @@ import { AppComponent } from './app.component';
 import { CribListingComponent } from './crib-listing/crib-listing.component';
 import { CribCardComponent } from './crib-card/crib-card.component';
 
-import {CribsService} from './services/cribs.service'
+import {CribsService} from './services/cribs.service';
+import { AddListingFormComponent } from './add-listing-form/add-listing-form.component';
 
 
 //defines strucutre of app
@@ -15,8 +16,9 @@ import {CribsService} from './services/cribs.service'
   // let app know abou tcompets hat we have created/or added from thirdparty
   declarations: [
     AppComponent,
-    CribListingComponent,//ng g component crib-card
-    CribCardComponent //this was  auto added using the ng cli
+    CribListingComponent,
+    CribCardComponent,
+    AddListingFormComponent
   ],
   imports: [ //list angular specific modules
     BrowserModule,
